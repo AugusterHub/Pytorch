@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 """ 0 线性模型 """
 import numpy as np
 import matplotlib.pyplot as plt
