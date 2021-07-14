@@ -1,11 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
 
 """ 3 反向传播 back propagation"""
 import torch
-import matplotlib.pyplot as plt
 
 x_data = [1.0, 2.0, 3.0]
 y_data = [2.0, 4.0, 6.0]
