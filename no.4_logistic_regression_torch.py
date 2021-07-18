@@ -18,6 +18,7 @@ class LogisticRegressionModel(torch.nn.Module):
         return y_pred
 
 model = LogisticRegressionModel()
+
 """ 2 Construct loss and optimizer"""
 criterion = torch.nn.BCELoss(size_average=False)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
