@@ -3,13 +3,13 @@
 import torch
 import numpy as np
 
-""" 0 Prepare dataset"""
+""" 0 Prepare dataset """
 xy = np.loadtxt('./diabetes.csv.gz',
                 delimiter=',', dtype=np.float32)
 x_data = torch.from_numpy(xy[:, :-1])
 y_data = torch.from_numpy(xy[:, [-1]])
 
-""" 1 Design model using Class"""
+""" 1 Design model using Class """
 class Model(torch.nn.Module):
     def __init__(self):
         super(Model, self).__init__()
@@ -26,11 +26,11 @@ class Model(torch.nn.Module):
 
 model = Model()
 
-""" 2 Construct loss and optimizer"""
+""" 2 Construct loss and optimizer """
 criterion = torch.nn.BCELoss(reduction='sum')
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
-""" 3 Training cycle"""
+""" 3 Training cycle """
 for epoch in range(1000):
     # Forward
     y_pred = model(x_data)
