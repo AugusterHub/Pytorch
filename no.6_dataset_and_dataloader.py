@@ -40,7 +40,7 @@ class Model(torch.nn.Module):
 model = Model()
 
 """ 2 Construct loss and optimizer"""
-criterion = torch.nn.BCELoss(size_average=True)
+criterion = torch.nn.BCELoss(reduction='mean')
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 """ 3 Train cycle """
