@@ -117,9 +117,9 @@ test_loader = DataLoader(dataset=test_dataset,
                          batch_size=batch_size)
 
 # 1 design model
-class Net(torch.nn.Module):
+class  CnnNet(torch.nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super(CnnNet, self).__init__()
         self.conv1 = torch.nn.Conv2d(1, 10, kernel_size=(5, 5))
         self.conv2 = torch.nn.Conv2d(10, 20, kernel_size=(5, 5))
         self.pooling = torch.nn.MaxPool2d(2)
@@ -133,7 +133,7 @@ class Net(torch.nn.Module):
         x = self.fc(x)
         return x
 
-model = Net()
+model = CnnNet()
 # define device as the first visible cuda device if we have CUDA available
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 model.to(device)
